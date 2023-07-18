@@ -8,11 +8,11 @@ const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'login', component:LoginComponent},
     { path: 'register', component: RegisterComponent},
-    { path: '**', redirectTo: ''},
     //define ruta de modulo usando lazyload(carga perezosa)
     {path: 'dashboard',
-     loadChildren:()=> import('./protected/protected.module').then(module=> module.ProtectedModule) 
+    loadChildren:()=> import('./protected/protected.module').then(module=> module.ProtectedModule) 
   },
+  { path: '**', redirectTo: ''},
 ];
 
 @NgModule({
